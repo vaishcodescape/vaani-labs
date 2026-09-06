@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "surface": {
+      "title": "Surface",
+      "type": "string"
+    },
+    "phonemes": {
+      "title": "Phonemes",
+      "type": "string"
+    },
+    "voice_id": {
+      "title": "Voice Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "surface",
+    "phonemes",
+    "voice_id"
+  ],
+  "title": "PronunciationPreviewRequest",
+  "type": "object"
+}

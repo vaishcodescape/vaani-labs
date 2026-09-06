@@ -1,0 +1,29 @@
+[project]
+name = "indic-text"
+version = "0.1.0"
+description = "Interfaces and deterministic mock implementations for Indic script detection, language identification, normalization, transliteration, G2P, pronunciation ranking, and lexicon storage."
+requires-python = ">=3.12"
+dependencies = ["regex>=2024.5.15"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.6", "mypy>=1.10", "types-regex>=2024.5.15"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["indic_text*"]
+
+[tool.setuptools.package-data]
+indic_text = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.mypy]
+strict = true
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"

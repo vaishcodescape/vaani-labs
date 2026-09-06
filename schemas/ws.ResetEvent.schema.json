@@ -1,0 +1,14 @@
+{
+  "properties": {
+    "type": {
+      "const": "reset",
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "title": "ResetEvent",
+  "type": "object"
+}

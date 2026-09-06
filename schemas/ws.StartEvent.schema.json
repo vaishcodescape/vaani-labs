@@ -1,0 +1,64 @@
+{
+  "properties": {
+    "type": {
+      "const": "start",
+      "title": "Type",
+      "type": "string"
+    },
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "voice_id": {
+      "title": "Voice Id",
+      "type": "string"
+    },
+    "speed": {
+      "default": 1.0,
+      "maximum": 2.0,
+      "minimum": 0.5,
+      "title": "Speed",
+      "type": "number"
+    },
+    "pitch": {
+      "default": 0.0,
+      "maximum": 12.0,
+      "minimum": -12.0,
+      "title": "Pitch",
+      "type": "number"
+    },
+    "energy": {
+      "default": 1.0,
+      "maximum": 2.0,
+      "minimum": 0.25,
+      "title": "Energy",
+      "type": "number"
+    },
+    "streaming": {
+      "default": true,
+      "title": "Streaming",
+      "type": "boolean"
+    },
+    "chunk_size_ms": {
+      "default": 200,
+      "maximum": 5000,
+      "minimum": 20,
+      "title": "Chunk Size Ms",
+      "type": "integer"
+    },
+    "mrss_slow_update_rate": {
+      "default": 4,
+      "maximum": 50,
+      "minimum": 1,
+      "title": "Mrss Slow Update Rate",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "type",
+    "text",
+    "voice_id"
+  ],
+  "title": "StartEvent",
+  "type": "object"
+}

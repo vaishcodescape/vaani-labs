@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "normalized": {
+      "title": "Normalized",
+      "type": "string"
+    },
+    "token_type": {
+      "title": "Token Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "text",
+    "normalized",
+    "token_type"
+  ],
+  "title": "NormalizeTextResponse",
+  "type": "object"
+}

@@ -1,0 +1,49 @@
+{
+  "$defs": {
+    "ModelInfo": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "is_default": {
+          "title": "Is Default",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "is_default"
+      ],
+      "title": "ModelInfo",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "acoustic_models": {
+      "items": {
+        "$ref": "#/$defs/ModelInfo"
+      },
+      "title": "Acoustic Models",
+      "type": "array"
+    },
+    "vocoders": {
+      "items": {
+        "$ref": "#/$defs/ModelInfo"
+      },
+      "title": "Vocoders",
+      "type": "array"
+    }
+  },
+  "required": [
+    "acoustic_models",
+    "vocoders"
+  ],
+  "title": "ModelsResponse",
+  "type": "object"
+}

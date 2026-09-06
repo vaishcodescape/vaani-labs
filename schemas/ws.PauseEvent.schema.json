@@ -1,0 +1,14 @@
+{
+  "properties": {
+    "type": {
+      "const": "pause",
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "title": "PauseEvent",
+  "type": "object"
+}

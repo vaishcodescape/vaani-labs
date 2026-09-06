@@ -1,0 +1,23 @@
+{
+  "properties": {
+    "surface": {
+      "title": "Surface",
+      "type": "string"
+    },
+    "language": {
+      "title": "Language",
+      "type": "string"
+    },
+    "script": {
+      "title": "Script",
+      "type": "string"
+    }
+  },
+  "required": [
+    "surface",
+    "language",
+    "script"
+  ],
+  "title": "PronunciationCandidatesRequest",
+  "type": "object"
+}

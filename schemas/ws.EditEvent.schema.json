@@ -1,0 +1,29 @@
+{
+  "properties": {
+    "type": {
+      "const": "edit",
+      "title": "Type",
+      "type": "string"
+    },
+    "revision_id": {
+      "title": "Revision Id",
+      "type": "integer"
+    },
+    "unsynthesized_text": {
+      "title": "Unsynthesized Text",
+      "type": "string"
+    },
+    "edit_offset_ms": {
+      "default": 0.0,
+      "title": "Edit Offset Ms",
+      "type": "number"
+    }
+  },
+  "required": [
+    "type",
+    "revision_id",
+    "unsynthesized_text"
+  ],
+  "title": "EditEvent",
+  "type": "object"
+}

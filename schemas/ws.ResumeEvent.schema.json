@@ -1,0 +1,14 @@
+{
+  "properties": {
+    "type": {
+      "const": "resume",
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "title": "ResumeEvent",
+  "type": "object"
+}

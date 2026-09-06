@@ -1,0 +1,47 @@
+/**
+ * Sample mixed-language sentences for the Synthesis Studio's quick-pick
+ * chips. Mirrors data/samples/sentences.json (kept as a separate literal
+ * here — see docs/architecture.md — rather than imported across the
+ * monorepo boundary, so the frontend bundle has no build-time
+ * dependency on the data/ directory's file layout).
+ */
+export interface SampleSentence {
+  id: string;
+  label: string;
+  language: string;
+  text: string;
+}
+
+export const SAMPLE_SENTENCES: SampleSentence[] = [
+  {
+    id: "hi-en-code-switch",
+    label: "Hindi + English code-switch",
+    language: "hi",
+    text: "मुझे कल 5 बजे meeting है।",
+  },
+  { id: "hi-plain", label: "Hindi", language: "hi", text: "नमस्ते, आप कैसे हैं?" },
+  {
+    id: "gu-en-code-switch",
+    label: "Gujarati + English code-switch",
+    language: "gu",
+    text: "હું office જાઉં છું અને પછી ઘરે આવીશ.",
+  },
+  {
+    id: "mr-plain",
+    label: "Marathi",
+    language: "mr",
+    text: "मी मराठी आहे आणि मला संगीत आवडते.",
+  },
+  {
+    id: "hi-romanized",
+    label: "Romanized Hindi",
+    language: "hi",
+    text: "Mujhe kal 5 baje meeting hai, tum aaoge kya?",
+  },
+  {
+    id: "hi-date-number-abbrev",
+    label: "Numbers, dates and abbreviations",
+    language: "hi",
+    text: "Dr. Sharma 06/09/2026 को 10 बजे आएंगे।",
+  },
+];

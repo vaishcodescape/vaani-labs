@@ -1,0 +1,41 @@
+{
+  "$defs": {
+    "LanguageInfo": {
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "script": {
+          "title": "Script",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "name",
+        "script"
+      ],
+      "title": "LanguageInfo",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "languages": {
+      "items": {
+        "$ref": "#/$defs/LanguageInfo"
+      },
+      "title": "Languages",
+      "type": "array"
+    }
+  },
+  "required": [
+    "languages"
+  ],
+  "title": "LanguagesResponse",
+  "type": "object"
+}

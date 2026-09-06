@@ -1,0 +1,142 @@
+{
+  "$defs": {
+    "AnalysedTokenSchema": {
+      "properties": {
+        "index": {
+          "title": "Index",
+          "type": "integer"
+        },
+        "surface": {
+          "title": "Surface",
+          "type": "string"
+        },
+        "start_offset": {
+          "title": "Start Offset",
+          "type": "integer"
+        },
+        "end_offset": {
+          "title": "End Offset",
+          "type": "integer"
+        },
+        "script": {
+          "title": "Script",
+          "type": "string"
+        },
+        "language": {
+          "title": "Language",
+          "type": "string"
+        },
+        "normalized": {
+          "title": "Normalized",
+          "type": "string"
+        },
+        "token_type": {
+          "title": "Token Type",
+          "type": "string"
+        },
+        "codepoints": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Codepoints",
+          "type": "array"
+        },
+        "pronunciation": {
+          "$ref": "#/$defs/TokenPronunciationSchema"
+        }
+      },
+      "required": [
+        "index",
+        "surface",
+        "start_offset",
+        "end_offset",
+        "script",
+        "language",
+        "normalized",
+        "token_type",
+        "codepoints",
+        "pronunciation"
+      ],
+      "title": "AnalysedTokenSchema",
+      "type": "object"
+    },
+    "CodeSwitchSpanSchema": {
+      "properties": {
+        "start_offset": {
+          "title": "Start Offset",
+          "type": "integer"
+        },
+        "end_offset": {
+          "title": "End Offset",
+          "type": "integer"
+        },
+        "language": {
+          "title": "Language",
+          "type": "string"
+        }
+      },
+      "required": [
+        "start_offset",
+        "end_offset",
+        "language"
+      ],
+      "title": "CodeSwitchSpanSchema",
+      "type": "object"
+    },
+    "TokenPronunciationSchema": {
+      "properties": {
+        "phonemes": {
+          "title": "Phonemes",
+          "type": "string"
+        },
+        "confidence": {
+          "title": "Confidence",
+          "type": "number"
+        },
+        "is_uncertain": {
+          "title": "Is Uncertain",
+          "type": "boolean"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "phonemes",
+        "confidence",
+        "is_uncertain",
+        "source"
+      ],
+      "title": "TokenPronunciationSchema",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "text": {
+      "title": "Text",
+      "type": "string"
+    },
+    "tokens": {
+      "items": {
+        "$ref": "#/$defs/AnalysedTokenSchema"
+      },
+      "title": "Tokens",
+      "type": "array"
+    },
+    "code_switch_spans": {
+      "items": {
+        "$ref": "#/$defs/CodeSwitchSpanSchema"
+      },
+      "title": "Code Switch Spans",
+      "type": "array"
+    }
+  },
+  "required": [
+    "text",
+    "tokens",
+    "code_switch_spans"
+  ],
+  "title": "AnalyseTextResponse",
+  "type": "object"
+}

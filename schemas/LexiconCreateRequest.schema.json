@@ -1,0 +1,31 @@
+{
+  "properties": {
+    "surface": {
+      "minLength": 1,
+      "title": "Surface",
+      "type": "string"
+    },
+    "language": {
+      "minLength": 1,
+      "title": "Language",
+      "type": "string"
+    },
+    "phonemes": {
+      "minLength": 1,
+      "title": "Phonemes",
+      "type": "string"
+    },
+    "notes": {
+      "default": "",
+      "title": "Notes",
+      "type": "string"
+    }
+  },
+  "required": [
+    "surface",
+    "language",
+    "phonemes"
+  ],
+  "title": "LexiconCreateRequest",
+  "type": "object"
+}

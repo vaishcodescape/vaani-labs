@@ -1,0 +1,61 @@
+{
+  "$defs": {
+    "LexiconEntrySchema": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "surface": {
+          "title": "Surface",
+          "type": "string"
+        },
+        "language": {
+          "title": "Language",
+          "type": "string"
+        },
+        "phonemes": {
+          "title": "Phonemes",
+          "type": "string"
+        },
+        "notes": {
+          "title": "Notes",
+          "type": "string"
+        },
+        "created_at": {
+          "title": "Created At",
+          "type": "string"
+        },
+        "updated_at": {
+          "title": "Updated At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "surface",
+        "language",
+        "phonemes",
+        "notes",
+        "created_at",
+        "updated_at"
+      ],
+      "title": "LexiconEntrySchema",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "entries": {
+      "items": {
+        "$ref": "#/$defs/LexiconEntrySchema"
+      },
+      "title": "Entries",
+      "type": "array"
+    }
+  },
+  "required": [
+    "entries"
+  ],
+  "title": "LexiconListResponse",
+  "type": "object"
+}

@@ -1,0 +1,46 @@
+{
+  "$defs": {
+    "PronunciationCandidateSchema": {
+      "properties": {
+        "phonemes": {
+          "title": "Phonemes",
+          "type": "string"
+        },
+        "confidence": {
+          "title": "Confidence",
+          "type": "number"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "phonemes",
+        "confidence",
+        "source"
+      ],
+      "title": "PronunciationCandidateSchema",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "surface": {
+      "title": "Surface",
+      "type": "string"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/PronunciationCandidateSchema"
+      },
+      "title": "Candidates",
+      "type": "array"
+    }
+  },
+  "required": [
+    "surface",
+    "candidates"
+  ],
+  "title": "PronunciationCandidatesResponse",
+  "type": "object"
+}

@@ -1,3 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# Model checkpoints (constraint #13: never commit these)
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.safetensors
+models/checkpoints/
+
+# SQLite data (constraint: don't commit generated lexicon data)
+data/lexicons/*.db
+data/lexicons/*.sqlite
+
+# Playwright
+apps/web/playwright-report/
+apps/web/test-results/
+
 # Logs
 logs
 *.log

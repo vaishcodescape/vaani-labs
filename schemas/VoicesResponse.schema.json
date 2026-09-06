@@ -1,0 +1,46 @@
+{
+  "$defs": {
+    "VoiceInfo": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "language": {
+          "title": "Language",
+          "type": "string"
+        },
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "gender": {
+          "title": "Gender",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "language",
+        "label",
+        "gender"
+      ],
+      "title": "VoiceInfo",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "voices": {
+      "items": {
+        "$ref": "#/$defs/VoiceInfo"
+      },
+      "title": "Voices",
+      "type": "array"
+    }
+  },
+  "required": [
+    "voices"
+  ],
+  "title": "VoicesResponse",
+  "type": "object"
+}

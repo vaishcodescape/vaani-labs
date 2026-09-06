@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install backend packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install --config-settings editable_mode=compat \
+            -e packages/indic_text \
+            -e packages/audio_metrics \
+            -e packages/tts_runtime \
+            -e "apps/api[dev]"
+      - name: Lint (ruff)
+        run: ruff check packages/indic_text packages/audio_metrics packages/tts_runtime apps/api
+      - name: Type check (mypy)
+        run: |
+          mypy packages/indic_text/indic_text
+          mypy packages/audio_metrics/audio_metrics
+          mypy packages/tts_runtime/tts_runtime
+          mypy apps/api/app
+      - name: Test
+        run: |
+          pytest -q packages/indic_text
+          pytest -q packages/audio_metrics
+          pytest -q packages/tts_runtime
+          pytest -q apps/api
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: apps/web/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run test -- --run

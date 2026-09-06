@@ -1,0 +1,14 @@
+{
+  "properties": {
+    "type": {
+      "const": "cancel",
+      "title": "Type",
+      "type": "string"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "title": "CancelEvent",
+  "type": "object"
+}

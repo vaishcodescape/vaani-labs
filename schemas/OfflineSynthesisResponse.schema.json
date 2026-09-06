@@ -1,0 +1,38 @@
+{
+  "properties": {
+    "sample_rate": {
+      "title": "Sample Rate",
+      "type": "integer"
+    },
+    "channels": {
+      "title": "Channels",
+      "type": "integer"
+    },
+    "bit_depth": {
+      "title": "Bit Depth",
+      "type": "integer"
+    },
+    "duration_ms": {
+      "title": "Duration Ms",
+      "type": "number"
+    },
+    "rtf": {
+      "title": "Rtf",
+      "type": "number"
+    },
+    "pcm_base64": {
+      "title": "Pcm Base64",
+      "type": "string"
+    }
+  },
+  "required": [
+    "sample_rate",
+    "channels",
+    "bit_depth",
+    "duration_ms",
+    "rtf",
+    "pcm_base64"
+  ],
+  "title": "OfflineSynthesisResponse",
+  "type": "object"
+}

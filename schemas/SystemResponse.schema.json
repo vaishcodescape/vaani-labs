@@ -1,0 +1,41 @@
+{
+  "properties": {
+    "status": {
+      "title": "Status",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "type": "string"
+    },
+    "uptime_seconds": {
+      "title": "Uptime Seconds",
+      "type": "number"
+    },
+    "providers": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Providers",
+      "type": "object"
+    },
+    "active_sessions": {
+      "title": "Active Sessions",
+      "type": "integer"
+    },
+    "lexicon_entry_count": {
+      "title": "Lexicon Entry Count",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "status",
+    "version",
+    "uptime_seconds",
+    "providers",
+    "active_sessions",
+    "lexicon_entry_count"
+  ],
+  "title": "SystemResponse",
+  "type": "object"
+}
